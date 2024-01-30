@@ -10,11 +10,16 @@
 h1 {
   margin-bottom: 20px;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .button-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 10px;
+  margin-left: -50px;
 }
 
 button {
@@ -34,9 +39,4 @@ button {
   background-color: #f44336;
   color: white;
   border: none;
-}
-
-.no-button:disabled {
-  cursor: not-allowed;
-  transform: translateX(200px);
 }
