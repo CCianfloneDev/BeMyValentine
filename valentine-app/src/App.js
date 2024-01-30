@@ -5,16 +5,26 @@ const App = () => {
   const buttonContainerRef = useRef(null);
   const yesButtonRef = useRef(null);
 
-  const [noButtonShake, setNoButtonShake] = useState(false);
+  const [noButtonAnimation, setNoButtonAnimation] = useState('');
+  const [isAnimationRunning, setIsAnimationRunning] = useState(false);
 
   const handleNoButtonClick = () => {
-    // Make the "No" button shake
-    setNoButtonShake(true);
+    // If the animation is already running, do nothing
+    if (isAnimationRunning) {
+      return;
+    }
 
-    // Reset the shake state after a short delay
+    // Set the animation state to running
+    setIsAnimationRunning(true);
+
+    // Make the "No" button perform a wacky animation
+    setNoButtonAnimation('bounce-rotate');
+
+    // Reset the animation state after a short delay
     setTimeout(() => {
-      setNoButtonShake(false);
-    }, 500);
+      setNoButtonAnimation('');
+      setIsAnimationRunning(false);
+    }, 750);
   };
 
   useEffect(() => {
@@ -27,7 +37,8 @@ const App = () => {
           left: Math.floor(Math.random() * (container.offsetWidth - 50)),
         };
 
-        setNoButtonShake(false);
+        setNoButtonAnimation('');
+        setIsAnimationRunning(false);
       }
     };
 
@@ -55,7 +66,7 @@ const App = () => {
           Yes
         </button>
         <button
-          className={`no-button ${noButtonShake ? 'shake' : ''}`}
+          className={`no-button ${noButtonAnimation}`}
           onClick={handleNoButtonClick}
           style={{
             position: 'absolute',
