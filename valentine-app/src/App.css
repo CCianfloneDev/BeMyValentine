@@ -7,6 +7,7 @@
   height: 100vh;
   font-family: 'Arial', sans-serif;
   background-color: #f9e3e3; /* Light pink background */
+  background: linear-gradient(to bottom right, #ffe1e1, #d08de2);
 }
 
 h1 {
@@ -23,6 +24,7 @@ h1 {
   flex-direction: column;
   gap: 10px;
   margin-left: 5px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -34,6 +36,10 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .yes-button {
