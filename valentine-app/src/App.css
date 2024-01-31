@@ -78,7 +78,7 @@ button:hover {
 /* Heart shape for yes button */
 .yes-button::before {
   content: '\2665';
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin-right: 5px;
 }
 
