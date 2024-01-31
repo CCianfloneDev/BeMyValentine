@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+import angryCatImage from './angry-cat.jpeg';
+import happyCatImage from './happy-cat.jpeg';
 
 const App = () => {
   const buttonContainerRef = useRef(null);
@@ -7,6 +9,13 @@ const App = () => {
 
   const [noButtonAnimation, setNoButtonAnimation] = useState('');
   const [isAnimationRunning, setIsAnimationRunning] = useState(false);
+  const [yesClicked, setYesClicked] = useState(false);
+  const [noClicked, setNoClicked] = useState(false);
+
+  const handleYesButtonClick = () => {
+    setYesClicked(true);
+    setNoClicked(false);
+  };
 
   const handleNoButtonClick = () => {
     // If the animation is already running, do nothing
@@ -20,9 +29,13 @@ const App = () => {
     // Make the "No" button perform a wacky animation
     setNoButtonAnimation('bounce-rotate');
 
+    setNoClicked(true);
+    setYesClicked(false); 
+
     // Reset the animation state after a short delay
     setTimeout(() => {
       setNoButtonAnimation('');
+
       setIsAnimationRunning(false);
     }, 750);
   };
@@ -60,7 +73,7 @@ const App = () => {
       >
         <button
           className="yes-button"
-          onClick={() => alert('Yes clicked!')}
+          onClick={handleYesButtonClick}
           ref={yesButtonRef}
         >
           Yes
@@ -77,6 +90,22 @@ const App = () => {
           No
         </button>
       </div>
+
+      {yesClicked && (
+        <img
+          src={happyCatImage}
+          alt="Happy Cat"
+          style={{ marginTop: '20px', maxWidth: '100%' }}
+        />
+      )}
+
+      {noClicked && (
+        <img
+          src={angryCatImage}
+          alt="Angry Cat"
+          style={{ marginTop: '20px', maxWidth: '100%' }}
+        />
+      )}
     </div>
   );
 };
