@@ -77,14 +77,14 @@ button:hover {
 
 /* Heart shape for yes button */
 .yes-button::before {
-  content: '\2665'; /* Unicode heart character */
+  content: '\2665';
   font-size: 3rem;
   margin-right: 5px;
 }
 
 /* Broken heart shape for no button */
 .no-button::before {
-  content: '\1F494'; /* Unicode broken heart character */
+  content: '\1F494';
   font-size: 1.5rem;
   margin-right: 5px;
 }
