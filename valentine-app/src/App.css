@@ -1,3 +1,4 @@
+/* Add this to your CSS file */
 .app {
   display: flex;
   flex-direction: column;
@@ -5,38 +6,44 @@
   justify-content: center;
   height: 100vh;
   font-family: 'Arial', sans-serif;
+  background-color: #f9e3e3; /* Light pink background */
 }
 
 h1 {
   margin-bottom: 20px;
   font-size: 1.5rem;
   text-align: center;
+  color: #e84949; /* Dark red text color */
 }
 
 .button-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   flex-direction: column;
   gap: 10px;
-  margin-left: -50px;
+  margin-left: 5px; 
 }
 
 button {
+  display: flex; 
+  align-items: center; 
   padding: 10px;
+  height: 40px; 
+  width: 100px; 
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .yes-button {
-  background-color: #4caf50;
+  background-color: #64b764; /* Light green */
   color: white;
   border: none;
 }
 
 .no-button {
-  background-color: #f44336;
+  background-color: #ff7b7b; /* Light red */
   color: white;
   border: none;
 }
@@ -55,4 +62,23 @@ button {
   60% {
     transform: translateY(-15px) rotate(15deg);
   }
+}
+
+/* Additional Valentine's Day styles */
+.app img {
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Heart shape for yes button */
+.yes-button::before {
+  content: '\2665'; /* Unicode heart character */
+  font-size: 3rem;
+  margin-right: 5px;
+}
+
+/* Broken heart shape for no button */
+.no-button::before {
+  content: '\1F494'; /* Unicode broken heart character */
+  font-size: 1.5rem;
+  margin-right: 5px;
 }

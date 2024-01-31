@@ -81,11 +81,6 @@ const App = () => {
         <button
           className={`no-button ${noButtonAnimation}`}
           onClick={handleNoButtonClick}
-          style={{
-            position: 'absolute',
-            top: '0',
-            left: '75px',
-          }}
         >
           No
         </button>
